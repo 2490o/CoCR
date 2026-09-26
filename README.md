@@ -5,6 +5,7 @@ Project page for **Detect What You Need: Chain-of-Causal Reasoning for 3D Intent
 - Authors: Zihao Zhang, Aming Wu, Yang Li, Yahong Han
 - OpenReview: https://openreview.net/forum?id=JF39l5WGlk
 - Paper: https://openreview.net/pdf?id=JF39l5WGlk
-- Intended GitHub Pages URL: https://2490o.github.io/CoCR/
+- Project page: https://2490o.github.io/CoCR/
 
-The project page is a self-contained static HTML file. Figures are embedded directly into `index.html`, so no separate image assets are required.
+This is a static GitHub Pages site. `index.html` contains the page layout, and `assets/images/` contains the original-resolution figures used on the page. Click a figure to enlarge it, or use its “View full resolution” link to open the source image.
+

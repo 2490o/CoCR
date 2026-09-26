@@ -51,9 +51,12 @@ img{display:block;max-width:100%;height:auto}
 .figure-card{margin:30px auto 0;max-width:1000px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);overflow:hidden}
 .figure-card.narrow{max-width:900px}
 .figure-card.square{max-width:940px}
-.figure-card.wide{max-width:1040px}
-.figure-card img{width:100%;background:#fff}
+.figure-card.wide{width:min(1400px,calc(100vw - 40px));max-width:none;position:relative;left:50%;transform:translateX(-50%)}
+.figure-card img{width:100%;height:auto;object-fit:contain;background:#fff}
 .figure-card .pad{padding:18px 22px;border-top:1px solid var(--line);font-size:14px;color:#555c66;text-align:center}
+.figure-card .pad a{color:var(--blue2);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.figure-stack{display:grid;gap:22px}
+.figure-stack .figure-card{margin-top:0}
 .image-btn{display:block;width:100%;padding:0;border:0;background:#fff;cursor:zoom-in}
 .abstract{max-width:920px;margin:0 auto;text-align:justify;font-family:Georgia,"Times New Roman",serif;font-size:19px;line-height:1.8;color:#30343a}
 .abstract strong{color:var(--ink)}
@@ -131,9 +134,9 @@ tr:last-child td{border-bottom:0}
 </header>
 <section aria-label="teaser" class="section tight">
 <div class="container">
-<div class="figure-card narrow">
-<button class="image-btn" data-img="assets/images/f1.svg"><img alt="Direct semantic matching versus causal reasoning motivation" height="1462" loading="lazy" src="assets/images/f1.svg" width="2600"/></button>
-<div class="pad"><strong>Motivation.</strong> Direct semantic matching can introduce a logical leap. CoCR explicitly infers functional requirements before grounding candidate 3D objects.</div>
+<div class="figure-card wide">
+<button class="image-btn" data-img="assets/images/motivation.jpg"><img alt="Direct semantic matching versus causal reasoning for finding a supportive pillow" height="2050" src="assets/images/motivation.jpg" width="4869"/></button>
+<div class="pad"><strong>Motivation.</strong> Direct semantic matching can introduce a logical leap. CoCR explicitly infers functional requirements before grounding candidate 3D objects. <a href="assets/images/motivation.jpg" target="_blank" rel="noopener">View full resolution</a></div>
 </div>
 </div>
 </section>
@@ -153,9 +156,9 @@ tr:last-child td{border-bottom:0}
 <section class="section" id="method">
 <div class="container">
 <div class="section-head"><span class="kicker">Method</span><h2>Chain-of-Causal Reasoning</h2><p>From abstract intent parsing to function-aware 3D object selection.</p></div>
-<div class="figure-card square">
-<button class="image-btn" data-img="assets/images/f2.png"><img alt="Overall architecture of CoCR" height="2565" loading="lazy" src="assets/images/f2.png" width="2600"/></button>
-<div class="pad"><strong>Overall architecture.</strong> CoCR jointly processes the intent text and 3D point cloud, constructs a functional dependency graph, performs causal–visual feature alignment and pruning, and localizes the target object through the refined graph.</div>
+<div class="figure-card wide">
+<button class="image-btn" data-img="assets/images/method.jpg"><img alt="CoCR architecture from intent text and point cloud to target object localization" height="3114" loading="lazy" src="assets/images/method.jpg" width="8730"/></button>
+<div class="pad"><strong>Overall architecture.</strong> CoCR jointly processes the intent text and 3D point cloud, constructs a functional dependency graph, performs causal–visual feature alignment and pruning, and localizes the target object through the refined graph. <a href="assets/images/method.jpg" target="_blank" rel="noopener">View full resolution</a></div>
 </div>
 <div class="method-grid">
 <div class="method-item"><div class="bar"></div><h3>Intent Causal Parsing (ICP)</h3><p>A fine-tuned T5-small model generates a step-wise reasoning sequence. Each reasoning step is mapped into a unified functional space containing 40 functional requirement nodes.</p></div>
@@ -202,24 +205,17 @@ tr:last-child td{border-bottom:0}
 <section class="section" id="visuals">
 <div class="container">
 <div class="section-head"><span class="kicker">Qualitative Study</span><h2>Visualizations</h2><p>Successful localization, broader scene coverage, and failure modes.</p></div>
-<div class="figure-card narrow">
-<button class="image-btn" data-img="assets/images/vis.svg"><img alt="IntentNet versus CoCR qualitative comparison" height="1462" loading="lazy" src="assets/images/vis.svg" width="2600"/></button>
-<div class="pad"><strong>Comparison with IntentNet.</strong> CoCR localizes all target sinks in the first example and correctly distinguishes the TV stand from functionally similar objects in the second.</div>
+<div class="figure-stack">
+<div class="figure-card wide"><button class="image-btn" data-img="assets/images/comparison.jpg"><img alt="IntentNet, CoCR, and ground-truth localization examples for a sink and TV stand" height="1350" loading="lazy" src="assets/images/comparison.jpg" width="4603"/></button><div class="pad"><strong>Comparison with IntentNet.</strong> CoCR localizes all target sinks in the first example and correctly distinguishes the TV stand from functionally similar objects in the second. <a href="assets/images/comparison.jpg" target="_blank" rel="noopener">View full resolution</a></div></div>
+<div class="figure-card wide"><button class="image-btn" data-img="assets/images/examples.jpg"><img alt="CoCR localization examples for a cup, projector, and backpack in 3D scenes" height="1465" loading="lazy" src="assets/images/examples.jpg" width="5523"/></button><div class="pad">Successful localization across diverse scenes and objects. <a href="assets/images/examples.jpg" target="_blank" rel="noopener">View full resolution</a></div></div>
+<div class="figure-card wide"><button class="image-btn" data-img="assets/images/failure-cases.jpg"><img alt="Failure cases for a toilet seat cover dispenser, laundry basket, and kitchen counter" height="1382" loading="lazy" src="assets/images/failure-cases.jpg" width="4744"/></button><div class="pad">Failure cases show how visually or functionally similar objects can still lead to incorrect localization. <a href="assets/images/failure-cases.jpg" target="_blank" rel="noopener">View full resolution</a></div></div>
 </div>
-<div class="gallery" style="margin-top:20px">
-<div class="figure-card"><button class="image-btn" data-img="assets/images/Mvis.png"><img alt="More successful CoCR results" height="2558" loading="lazy" src="assets/images/Mvis.png" width="2600"/></button><div class="pad">More results across diverse scenes, single/multiple targets, and small objects.</div></div>
-<div class="figure-card"><button class="image-btn" data-img="assets/images/Fvis.svg"><img alt="Failure cases for 3D target localization" height="2558" loading="lazy" src="assets/images/Fvis.svg" width="2600"/></button><div class="pad">Failure cases including small-object density, inaccurate candidate boxes, and occlusion.</div></div>
-</div>
-<div class="figure-card narrow" style="margin-top:20px"><button class="image-btn" data-img="assets/images/Fvis-intent.svg"><img alt="Intent parsing failure cases" height="1462" loading="lazy" src="assets/images/Fvis-intent.svg" width="2600"/></button><div class="pad">Intent-parsing failure cases illustrate remaining challenges when the inferred functional requirement is ambiguous or incomplete.</div></div>
 </div>
 </section>
 <section class="section">
 <div class="container">
 <div class="section-head"><span class="kicker">Analysis</span><h2>Hyperparameter Analysis</h2><p>Reasoning depth and graph update iterations.</p></div>
-<div class="gallery">
-<div class="figure-card"><button class="image-btn" data-img="assets/images/hyper1.svg"><img alt="Reasoning step analysis" height="1462" loading="lazy" src="assets/images/hyper1.svg" width="2600"/></button><div class="pad">Four reasoning steps provide the best balance between parsing depth and error propagation.</div></div>
-<div class="figure-card"><button class="image-btn" data-img="assets/images/hyper2.svg"><img alt="Causal graph update iteration analysis" height="1462" loading="lazy" src="assets/images/hyper2.svg" width="2600"/></button><div class="pad">Two graph-update iterations yield the strongest performance before gains saturate.</div></div>
-</div>
+<div class="figure-card wide"><button class="image-btn" data-img="assets/images/hyperparameters.jpg"><img alt="Accuracy and average precision by reasoning steps and causal graph update iterations" height="1589" loading="lazy" src="assets/images/hyperparameters.jpg" width="3737"/></button><div class="pad">Four reasoning steps and two graph-update iterations yield the strongest performance in these analyses. <a href="assets/images/hyperparameters.jpg" target="_blank" rel="noopener">View full resolution</a></div></div>
 </div>
 </section>
 <section class="section" id="citation">
@@ -245,3 +241,4 @@ document.getElementById('copyBtn').addEventListener('click',async e=>{await navi
 </script>
 </body>
 </html>
+
