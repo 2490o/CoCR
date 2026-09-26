@@ -84,9 +84,6 @@ tr:last-child td{border-bottom:0}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .gallery .figure-card{margin-top:0}
 .note{max-width:900px;margin:18px auto 0;color:var(--muted);font-size:14px;text-align:center}
-.codebox{max-width:920px;margin:24px auto 0;position:relative;border:1px solid var(--line);border-radius:16px;background:#11151b;color:#e9eef5;padding:22px;overflow:auto}
-.codebox pre{margin:0;font:13px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap}
-.copy{position:absolute;right:12px;top:12px;border:1px solid #39404a;background:#1c222b;color:#dfe5ed;border-radius:8px;padding:7px 10px;font-size:12px;cursor:pointer}
 .footer{padding:34px 0 50px;border-top:1px solid var(--line);color:#777e87;text-align:center;font-size:13px}
 .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:25px;background:rgba(7,9,12,.9)}
 .lightbox.open{display:flex}.lightbox img{max-width:96vw;max-height:92vh;object-fit:contain}.lightbox button{position:absolute;right:22px;top:18px;border:0;background:transparent;color:#fff;font-size:38px;cursor:pointer}
@@ -99,7 +96,7 @@ tr:last-child td{border-bottom:0}
 <div class="container nav-inner">
 <a class="logo" href="#top">CoCR</a>
 <div class="nav-links">
-<a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Results</a><a href="#visuals">Visualizations</a><a href="#citation">Citation</a>
+<a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Results</a><a href="#visuals">Visualizations</a>
 </div>
 </div>
 </nav>
@@ -192,18 +189,6 @@ tr:last-child td{border-bottom:0}
 <div class="figure-card wide"><button class="image-btn" data-img="assets/images/hyperparameters.jpg"><img alt="Accuracy and average precision by reasoning steps and causal graph update iterations" height="1589" loading="lazy" src="assets/images/hyperparameters.jpg" width="3737"/></button><div class="pad">Four reasoning steps and two graph-update iterations yield the strongest performance in these analyses.</div></div>
 </div>
 </section>
-<section class="section" id="citation">
-<div class="container">
-<div class="section-head"><span class="kicker">Reference</span><h2>Citation</h2><p>OpenReview submission page: JF39l5WGlk.</p></div>
-<div class="codebox"><button class="copy" id="copyBtn">Copy</button><pre id="bib">@misc{zhang2026detect,
-  title  = {Detect What You Need: Chain-of-Causal Reasoning for 3D Intent Grounding},
-  author = {Zihao Zhang and Aming Wu and Yang Li and Yahong Han},
-  year   = {2026},
-  note   = {NeurIPS 2026 Submission},
-  url    = {https://openreview.net/forum?id=JF39l5WGlk}
-}</pre></div>
-</div>
-</section>
 <footer class="footer"><div class="container">CoCR · Detect What You Need · 2026</div></footer>
 <div aria-hidden="true" class="lightbox" id="lightbox"><button aria-label="Close">×</button><img alt="Expanded figure"/></div>
 <script>
@@ -211,7 +196,6 @@ const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
 document.querySelectorAll('[data-img]').forEach(b=>b.addEventListener('click',()=>{lbImg.src=b.dataset.img;lb.classList.add('open');lb.setAttribute('aria-hidden','false')}));
 function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');lbImg.src=''}
 lb.querySelector('button').addEventListener('click',closeLb);lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
-document.getElementById('copyBtn').addEventListener('click',async e=>{await navigator.clipboard.writeText(document.getElementById('bib').innerText);e.target.textContent='Copied';setTimeout(()=>e.target.textContent='Copy',1300)});
 </script>
 </body>
 </html>
