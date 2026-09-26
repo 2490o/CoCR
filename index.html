@@ -72,10 +72,6 @@ img{display:block;max-width:100%;height:auto}
 .method-item:nth-child(3) .bar{background:#6c7d44}
 .method-item h3{font-size:17px;margin:0 0 8px}
 .method-item p{font-size:14px;color:var(--muted);margin:0}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
-.metric{border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;background:#fff}
-.metric strong{display:block;font-size:32px;letter-spacing:-.04em;color:var(--blue);line-height:1.15}
-.metric span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
 .tables{display:grid;grid-template-columns:1fr;gap:20px;margin-top:22px}
 .table-wrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
 .table-title{padding:16px 18px;border-bottom:1px solid var(--line);font-weight:800}
@@ -86,7 +82,6 @@ th{background:#fafbfc;font-weight:750;color:#3f4650}
 td:first-child,th:first-child{text-align:left}
 tr:last-child td{border-bottom:0}
 .ours td{background:#f2f7fd;font-weight:750;color:#183f6e}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .gallery .figure-card{margin-top:0}
 .note{max-width:900px;margin:18px auto 0;color:var(--muted);font-size:14px;text-align:center}
@@ -96,8 +91,8 @@ tr:last-child td{border-bottom:0}
 .footer{padding:34px 0 50px;border-top:1px solid var(--line);color:#777e87;text-align:center;font-size:13px}
 .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:25px;background:rgba(7,9,12,.9)}
 .lightbox.open{display:flex}.lightbox img{max-width:96vw;max-height:92vh;object-fit:contain}.lightbox button{position:absolute;right:22px;top:18px;border:0;background:transparent;color:#fff;font-size:38px;cursor:pointer}
-@media(max-width:860px){.nav-links{display:none}.hero{padding-top:55px}.contributions,.method-grid,.metrics,.two,.gallery{grid-template-columns:1fr 1fr}.abstract{font-size:18px}.section{padding:56px 0}}
-@media(max-width:620px){.container{width:min(var(--max),calc(100% - 24px))}.nav-inner{height:60px}.hero h1{font-size:38px}.hero h1 .sub{font-size:23px}.authors{font-size:16px}.contributions,.method-grid,.metrics,.two,.gallery{grid-template-columns:1fr}.section{padding:48px 0}.abstract{font-size:17px;text-align:left}.figure-card{border-radius:14px}.btn{height:42px;padding:0 15px}}
+@media(max-width:860px){.nav-links{display:none}.hero{padding-top:55px}.contributions,.method-grid,.gallery{grid-template-columns:1fr 1fr}.abstract{font-size:18px}.section{padding:56px 0}}
+@media(max-width:620px){.container{width:min(var(--max),calc(100% - 24px))}.nav-inner{height:60px}.hero h1{font-size:38px}.hero h1 .sub{font-size:23px}.authors{font-size:16px}.contributions,.method-grid,.gallery{grid-template-columns:1fr}.section{padding:48px 0}.abstract{font-size:17px;text-align:left}.figure-card{border-radius:14px}.btn{height:42px;padding:0 15px}}
 </style>
 </head>
 <body>
@@ -169,13 +164,7 @@ tr:last-child td{border-bottom:0}
 </section>
 <section class="section" id="results">
 <div class="container">
-<div class="section-head"><span class="kicker">Experiments</span><h2>Quantitative Results</h2><p>Results on Intent3D and standard 3D visual grounding benchmarks.</p></div>
-<div class="metrics">
-<div class="metric"><strong>45.91</strong><span>Intent3D Test · Top1@0.5</span></div>
-<div class="metric"><strong>30.28</strong><span>Intent3D Test · AP@0.5</span></div>
-<div class="metric"><strong>67.1</strong><span>Nr3D · Overall</span></div>
-<div class="metric"><strong>81.6</strong><span>Sr3D · Overall</span></div>
-</div>
+<div class="section-head"><span class="kicker">Experiments</span><h2>Quantitative Results</h2><p>Results on the Intent3D benchmark.</p></div>
 <div class="tables">
 <div class="table-wrap">
 <div class="table-title">3D Intention Grounding on Intent3D</div>
@@ -188,16 +177,6 @@ tr:last-child td{border-bottom:0}
 <tr class="ours"><td>CoCR (Ours)</td><td>60.71</td><td>43.24</td><td>42.65</td><td>27.33</td><td>61.37</td><td>45.91</td><td>45.73</td><td>30.28</td></tr>
 </tbody>
 </table></div>
-</div>
-<div class="two">
-<div class="table-wrap"><div class="table-title">3D Visual Grounding</div><div class="scroller"><table>
-<thead><tr><th>Method</th><th>Nr3D</th><th>Nr3D Hard</th><th>Sr3D</th><th>Sr3D Hard</th></tr></thead>
-<tbody><tr><td>GPS</td><td>64.9</td><td>57.8</td><td>77.5</td><td>71.6</td></tr><tr><td>PQ3D</td><td>66.7</td><td>58.7</td><td>79.7</td><td>72.8</td></tr><tr class="ours"><td>CoCR</td><td>67.1</td><td>59.8</td><td>81.6</td><td>73.7</td></tr></tbody>
-</table></div></div>
-<div class="table-wrap"><div class="table-title">Component Ablation on Intent3D Test</div><div class="scroller"><table>
-<thead><tr><th>ICP</th><th>ICG</th><th>CVFA</th><th>Top1@.5</th><th>AP@.5</th></tr></thead>
-<tbody><tr><td>–</td><td>–</td><td>–</td><td>38.70</td><td>24.40</td></tr><tr><td>✓</td><td>–</td><td>–</td><td>40.31</td><td>25.70</td></tr><tr><td>–</td><td>✓</td><td>–</td><td>41.07</td><td>25.37</td></tr><tr><td>✓</td><td>✓</td><td>–</td><td>43.67</td><td>28.38</td></tr><tr class="ours"><td>✓</td><td>✓</td><td>✓</td><td>45.91</td><td>30.28</td></tr></tbody>
-</table></div></div>
 </div>
 </div>
 </div>
