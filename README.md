@@ -7,31 +7,6 @@ Code and project page for **Detect What You Need: Chain-of-Causal Reasoning for 
 - Paper: https://openreview.net/pdf?id=JF39l5WGlk
 - Project page: https://2490o.github.io/CoCR/ (`index.html` and `assets/images/` in this repository; click a figure on the page to enlarge it)
 
-## What this code implements
-
-The code is built on the [Intent3D](https://github.com/WeitaiKang/Intent3D) IntentNet baseline (BUTD-DETR style detector with GroupFree box proposals). CoCR is implemented in `models/cocr.py`:
-
-- **ICP** (Intent Causal Parsing): 4 ordered reasoning-step queries decoded from the RoBERTa intent features and projected onto a K=40 functional vocabulary, giving P(f|Q).
-- **ICG** (Intent Causal Grounding): function-mediated candidate scores from category-name embeddings and a train-split category-to-function prior, with dependency pruning (θ=0.2).
-- **CVFA** (Causal-Visual Feature Alignment): 2 iterations of cross-attention from candidate box features to function-aware representations, graph re-estimation and dependency-weighted consistency loss.
-
-The released configuration (`scripts/train_cocr_v2.sh`) additionally uses:
-
-- `--cocr_detach`: the CoCR auxiliary losses (ICP / ICG / query / consistency / pruning) only train CoCR's own heads. CVFA's refined candidate features remain in the forward path and are trained by the grounding loss.
-- `--use_qhead`: an IoU-quality head on every decoder layer (BCE to the IoU of each query box). At evaluation the confidence is re-scored as `conf * sigmoid(qiou)^γ`, γ = 0.35.
-- CoCR's query-level function score is not fused into the ranking (`--cocr_fuse_weights 0.0`).
-
-The functional vocabulary and targets are provided in `data/cocr/`. They are built by `data/build_cocr_vocab.py`; the vocabulary and the category-to-function prior use the training split only.
-
-## Reference results (this release)
-
-Single training run, 2 × RTX 3090, total batch size 16, 130 epochs, checkpoint selected on the val split (epoch 74), γ = 0.35.
-
-| Split | Top1@0.25 | Top1@0.5 | AP@0.25 | AP@0.5 |
-|---|---:|---:|---:|---:|
-| Val | 58.07 | 41.18 | 45.88 | 30.27 |
-| Test | 59.37 | 43.09 | 46.45 | 31.60 |
-
 ## 1. Installation
 
 Tested with Python 3.9, PyTorch 2.1.1 (CUDA 12.1), transformers 4.37 and spaCy 3.3. `environment.yml` is the original Intent3D environment (Python 3.7 / PyTorch 1.7).
