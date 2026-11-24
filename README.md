@@ -3,9 +3,8 @@
 Code and project page for **Detect What You Need: Chain-of-Causal Reasoning for 3D Intent Grounding**.
 
 - Authors: Zihao Zhang, Aming Wu, Yang Li, Yahong Han
-- OpenReview: https://openreview.net/forum?id=JF39l5WGlk
-- Paper: https://openreview.net/pdf?id=JF39l5WGlk
-- Project page: https://2490o.github.io/CoCR/ (`index.html` and `assets/images/` in this repository; click a figure on the page to enlarge it)
+- Paper: https://arxiv.org/pdf/2611.23754
+- Project page: https://2490o.github.io/CoCR/
 
 ## 1. Installation
 
