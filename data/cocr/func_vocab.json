@@ -1,0 +1,538 @@
+{
+ "functions": [
+  {
+   "name": "placement surface",
+   "description": "a flat surface to place or put things down on",
+   "patterns": [
+    "\\bplac(e|ing)\\b",
+    "\\bput(ting)?\\b",
+    "\\bset (it |them |my )?down\\b",
+    "\\blay(ing)?\\b",
+    "\\bsurface\\b",
+    "\\bonto\\b"
+   ]
+  },
+  {
+   "name": "work and study support",
+   "description": "a place to work or study on tasks",
+   "patterns": [
+    "\\bwork(ing|s)?\\b",
+    "\\bstud(y|ying)\\b",
+    "\\bworkspace\\b",
+    "\\btasks?\\b",
+    "\\bprojects?\\b",
+    "\\bhomework\\b"
+   ]
+  },
+  {
+   "name": "dining support",
+   "description": "support for eating meals and snacks",
+   "patterns": [
+    "\\beat(ing)?\\b",
+    "\\bmeals?\\b",
+    "\\bdinner\\b",
+    "\\blunch\\b",
+    "\\bbreakfast\\b",
+    "\\bdin(e|ing)\\b",
+    "\\bsnacks?\\b"
+   ]
+  },
+  {
+   "name": "storage",
+   "description": "storing and keeping belongings",
+   "patterns": [
+    "\\bstor(e|ing|age)\\b",
+    "\\bkeep(ing)?\\b",
+    "\\bstash\\b",
+    "\\bbelongings\\b",
+    "\\bessentials\\b",
+    "\\bsupplies\\b"
+   ]
+  },
+  {
+   "name": "organization",
+   "description": "organizing and arranging items neatly",
+   "patterns": [
+    "\\borgani[sz](e|ed|ing)\\b",
+    "\\barrang(e|ing)\\b",
+    "\\btid(y|ily)\\b",
+    "\\bneatly\\b",
+    "\\bsort\\b",
+    "\\bin order\\b"
+   ]
+  },
+  {
+   "name": "display",
+   "description": "displaying or showcasing items",
+   "patterns": [
+    "\\bdisplay(ing)?\\b",
+    "\\bshowcas(e|ing)\\b",
+    "\\bshow off\\b",
+    "\\bexhibit\\b"
+   ]
+  },
+  {
+   "name": "carrying",
+   "description": "carrying and transporting things",
+   "patterns": [
+    "\\bcarry(ing)?\\b",
+    "\\bpack(ing)?\\b",
+    "\\btransport\\b",
+    "\\btrip\\b",
+    "\\btravel(ing|ling)?\\b",
+    "\\bbring\\b"
+   ]
+  },
+  {
+   "name": "waste disposal",
+   "description": "throwing away and disposing of waste",
+   "patterns": [
+    "\\bdispos(e|al|ing)\\b",
+    "\\bdiscard(ing)?\\b",
+    "\\bthrow(ing)? (away|out)\\b",
+    "\\btrash\\b",
+    "\\bwaste\\b",
+    "\\bgarbage\\b",
+    "\\bunwanted\\b",
+    "\\bwrappers?\\b",
+    "\\brecycl(e|ing|able)\\b",
+    "\\bget rid of\\b"
+   ]
+  },
+  {
+   "name": "seating",
+   "description": "somewhere to sit down",
+   "patterns": [
+    "\\bsit(ting)?\\b",
+    "\\bseat(ed|ing)?\\b"
+   ]
+  },
+  {
+   "name": "rest and relaxation",
+   "description": "resting and relaxing comfortably",
+   "patterns": [
+    "\\brest(ing)?\\b",
+    "\\brelax(ing|ation)?\\b",
+    "\\bnap\\b",
+    "\\blounge\\b",
+    "\\bunwind\\b",
+    "\\bcomfortabl[ey]\\b",
+    "\\bcomfort\\b"
+   ]
+  },
+  {
+   "name": "body support",
+   "description": "supporting the body, back, feet or head",
+   "patterns": [
+    "\\bsupport\\b",
+    "\\bback\\b",
+    "\\bfeet\\b",
+    "\\blean\\b",
+    "\\blegs?\\b",
+    "\\bhead\\b",
+    "\\bposture\\b",
+    "\\bneck\\b"
+   ]
+  },
+  {
+   "name": "sleeping",
+   "description": "sleeping and lying down at night",
+   "patterns": [
+    "\\bsleep(ing)?\\b",
+    "\\bnight\\b",
+    "\\blie down\\b",
+    "\\bbedtime\\b"
+   ]
+  },
+  {
+   "name": "writing",
+   "description": "writing, jotting notes and drawing",
+   "patterns": [
+    "\\bwrit(e|ing)\\b",
+    "\\bjot\\b",
+    "\\bnotes?\\b",
+    "\\bdraw(ing)?\\b",
+    "\\bsketch\\b",
+    "\\bideas\\b",
+    "\\breminders?\\b"
+   ]
+  },
+  {
+   "name": "presentation and meeting",
+   "description": "presenting to colleagues in meetings",
+   "patterns": [
+    "\\bpresent(ation|ations|ing)?\\b",
+    "\\bmeetings?\\b",
+    "\\bconference\\b",
+    "\\bcolleagues\\b",
+    "\\bteam\\b",
+    "\\bdiscussions?\\b",
+    "\\bclients\\b",
+    "\\bbrainstorm(ing)?\\b"
+   ]
+  },
+  {
+   "name": "visual display screen",
+   "description": "watching shows and viewing a screen",
+   "patterns": [
+    "\\bwatch(ing)?\\b",
+    "\\btv\\b",
+    "\\bscreen\\b",
+    "\\bmovies?\\b",
+    "\\bshows\\b",
+    "\\bnews\\b",
+    "\\bview(ing)?\\b",
+    "\\bmonitor\\b"
+   ]
+  },
+  {
+   "name": "illumination",
+   "description": "providing light to see in the dark",
+   "patterns": [
+    "\\blight(ing)?\\b",
+    "\\billuminat(e|ion|ing)\\b",
+    "\\bbright\\b",
+    "\\bdark\\b",
+    "\\blamp\\b"
+   ]
+  },
+  {
+   "name": "cleaning",
+   "description": "cleaning and wiping dirty things",
+   "patterns": [
+    "\\bclean(ing)?\\b",
+    "\\bwip(e|ing)\\b",
+    "\\bscrub\\b",
+    "\\bspills?\\b",
+    "\\bdirty\\b",
+    "\\bdust\\b",
+    "\\bdishes\\b",
+    "\\bmess\\b"
+   ]
+  },
+  {
+   "name": "bathing",
+   "description": "bathing, showering and soaking the body",
+   "patterns": [
+    "\\bbath(e|ing)?\\b",
+    "\\bshower(ing)?\\b",
+    "\\bsoak(ing)?\\b"
+   ]
+  },
+  {
+   "name": "cooking",
+   "description": "cooking and preparing food",
+   "patterns": [
+    "\\bcook(ing)?\\b",
+    "\\bprepar(e|ing)\\b",
+    "\\bboil\\b",
+    "\\bvegetables\\b",
+    "\\bingredients\\b",
+    "\\brecipe\\b",
+    "\\bheat (up )?(my )?food\\b"
+   ]
+  },
+  {
+   "name": "drinking and liquid containment",
+   "description": "holding and drinking water, coffee or tea",
+   "patterns": [
+    "\\bdrink(s|ing)?\\b",
+    "\\bwater\\b",
+    "\\bcoffee\\b",
+    "\\btea\\b",
+    "\\bbeverages?\\b",
+    "\\bpour\\b",
+    "\\bhydrat(e|ed|ion)\\b"
+   ]
+  },
+  {
+   "name": "wearing",
+   "description": "wearing clothes and outfits",
+   "patterns": [
+    "\\bwear(ing)?\\b",
+    "\\boutfits?\\b",
+    "\\bdress(ed)?\\b",
+    "\\bput on\\b",
+    "\\boutside\\b"
+   ]
+  },
+  {
+   "name": "decoration",
+   "description": "decorating the room and making it aesthetic",
+   "patterns": [
+    "\\bdecorat(e|ion|ing)\\b",
+    "\\baesthetic\\b",
+    "\\batmosphere\\b",
+    "\\bbeautif(y|ul)\\b",
+    "\\bart(work)?\\b",
+    "\\bappreciat(e|ing)\\b",
+    "\\bmemories\\b",
+    "\\bambiance\\b"
+   ]
+  },
+  {
+   "name": "hanging",
+   "description": "hanging things up",
+   "patterns": [
+    "\\bhang(ing)?\\b",
+    "\\bhook\\b"
+   ]
+  },
+  {
+   "name": "privacy and concealment",
+   "description": "blocking sunlight and keeping privacy",
+   "patterns": [
+    "\\bprivacy\\b",
+    "\\bblock(ing)?\\b",
+    "\\bcover(ing)?\\b",
+    "\\bhide\\b",
+    "\\bsunlight\\b",
+    "\\bshade\\b",
+    "\\bconceal\\b"
+   ]
+  },
+  {
+   "name": "heating",
+   "description": "keeping warm and heating the room",
+   "patterns": [
+    "\\bwarm(th)?\\b",
+    "\\bheat(ing)?\\b",
+    "\\bcold\\b",
+    "\\bwinter\\b",
+    "\\btemperature\\b",
+    "\\bcozy\\b"
+   ]
+  },
+  {
+   "name": "cooling and ventilation",
+   "description": "cooling the air and ventilating",
+   "patterns": [
+    "\\bcool(ing)?\\b",
+    "\\bair\\b",
+    "\\bbreeze\\b",
+    "\\bventilat(e|ion)\\b",
+    "\\bhot\\b",
+    "\\bsmoke\\b",
+    "\\bfumes\\b"
+   ]
+  },
+  {
+   "name": "food preservation",
+   "description": "keeping food fresh and chilled",
+   "patterns": [
+    "\\bfresh\\b",
+    "\\bleftovers?\\b",
+    "\\bgroceries\\b",
+    "\\brefrigerat(e|ed)\\b",
+    "\\bchill(ed)?\\b",
+    "\\bperishable\\b",
+    "\\bfood\\b"
+   ]
+  },
+  {
+   "name": "hand washing and hygiene",
+   "description": "washing hands and maintaining hygiene",
+   "patterns": [
+    "\\bwash(ing)?\\b",
+    "\\bhands\\b",
+    "\\bhygiene\\b",
+    "\\bsanitiz(e|ing)\\b",
+    "\\bsoap\\b",
+    "\\brinse\\b"
+   ]
+  },
+  {
+   "name": "toilet use",
+   "description": "using the toilet for bodily needs",
+   "patterns": [
+    "\\btoilet\\b",
+    "\\bbodily\\b",
+    "\\brelieve myself\\b",
+    "\\brestroom\\b",
+    "\\bbathroom\\b",
+    "\\bpee\\b",
+    "\\bnature calls\\b"
+   ]
+  },
+  {
+   "name": "drying",
+   "description": "drying off hands and body",
+   "patterns": [
+    "\\bdry(ing)?\\b",
+    "\\bdry off\\b",
+    "\\btowels?\\b"
+   ]
+  },
+  {
+   "name": "grooming and appearance",
+   "description": "checking appearance and grooming",
+   "patterns": [
+    "\\bappearance\\b",
+    "\\bmirror\\b",
+    "\\bgroom(ing)?\\b",
+    "\\bhair\\b",
+    "\\bmakeup\\b",
+    "\\bface\\b",
+    "\\bshav(e|ing)\\b",
+    "\\bteeth\\b",
+    "\\blook\\b",
+    "\\bcheck\\b"
+   ]
+  },
+  {
+   "name": "computing and digital input",
+   "description": "typing and using a computer",
+   "patterns": [
+    "\\btyp(e|ing)\\b",
+    "\\bcomputer\\b",
+    "\\bemails?\\b",
+    "\\bdata\\b",
+    "\\bdigital\\b",
+    "\\binput\\b",
+    "\\blaptop\\b",
+    "\\bonline\\b",
+    "\\bsoftware\\b",
+    "\\bbrows(e|ing)\\b",
+    "\\bgames?\\b"
+   ]
+  },
+  {
+   "name": "communication",
+   "description": "making calls and communicating",
+   "patterns": [
+    "\\bcalls?\\b",
+    "\\bphone\\b",
+    "\\bcommunicat(e|ion)\\b",
+    "\\bcontact\\b",
+    "\\btalk\\b",
+    "\\btelephone\\b"
+   ]
+  },
+  {
+   "name": "printing and copying",
+   "description": "printing, copying and scanning documents",
+   "patterns": [
+    "\\bprint(ing|out|outs)?\\b",
+    "\\bcop(y|ies|ying)\\b",
+    "\\bscan(ning)?\\b"
+   ]
+  },
+  {
+   "name": "reading",
+   "description": "reading books and learning",
+   "patterns": [
+    "\\bread(ing)?\\b",
+    "\\bbooks?\\b",
+    "\\bknowledge\\b",
+    "\\blibrary\\b",
+    "\\bnovels?\\b",
+    "\\blearn(ing)?\\b"
+   ]
+  },
+  {
+   "name": "documents and paperwork",
+   "description": "handling documents, files and papers",
+   "patterns": [
+    "\\bdocuments?\\b",
+    "\\bfiles?\\b",
+    "\\bpaperwork\\b",
+    "\\bpapers?\\b",
+    "\\breports?\\b",
+    "\\bfolders?\\b",
+    "\\bmaterials\\b"
+   ]
+  },
+  {
+   "name": "time keeping",
+   "description": "checking the time and keeping schedule",
+   "patterns": [
+    "\\btime\\b",
+    "\\bclock\\b",
+    "\\bschedule\\b",
+    "\\bpunctual\\b",
+    "\\blate\\b",
+    "\\bhours\\b"
+   ]
+  },
+  {
+   "name": "laundry",
+   "description": "collecting and washing laundry",
+   "patterns": [
+    "\\blaundry\\b",
+    "\\bdirty clothes\\b",
+    "\\bhamper\\b",
+    "\\bclothes\\b"
+   ]
+  },
+  {
+   "name": "switch and control",
+   "description": "turning devices on or off and adjusting settings",
+   "patterns": [
+    "\\bturn(ing)? (on|off)\\b",
+    "\\bswitch\\b",
+    "\\bcontrol\\b",
+    "\\badjust(ing)?\\b"
+   ]
+  },
+  {
+   "name": "greenery and nature",
+   "description": "bringing plants and nature indoors",
+   "patterns": [
+    "\\bplants?\\b",
+    "\\bnature\\b",
+    "\\bgreen(ery)?\\b",
+    "\\bflowers?\\b",
+    "\\bgarden(ing)?\\b"
+   ]
+  }
+ ],
+ "stats": {
+  "train_keyword_coverage": 0.9470850767085077,
+  "train_mean_funcs": 1.9236540794372559,
+  "node_coverage": {
+   "placement surface": 2779,
+   "work and study support": 3423,
+   "dining support": 2384,
+   "storage": 5294,
+   "organization": 1950,
+   "display": 546,
+   "carrying": 1452,
+   "waste disposal": 1940,
+   "seating": 1357,
+   "rest and relaxation": 3401,
+   "body support": 1120,
+   "sleeping": 1859,
+   "writing": 1551,
+   "presentation and meeting": 2629,
+   "visual display screen": 1171,
+   "illumination": 860,
+   "cleaning": 2218,
+   "bathing": 1458,
+   "cooking": 1550,
+   "drinking and liquid containment": 1911,
+   "wearing": 1121,
+   "decoration": 920,
+   "hanging": 277,
+   "privacy and concealment": 712,
+   "heating": 2324,
+   "cooling and ventilation": 629,
+   "food preservation": 1456,
+   "hand washing and hygiene": 2888,
+   "toilet use": 1998,
+   "drying": 1333,
+   "grooming and appearance": 1544,
+   "computing and digital input": 2217,
+   "communication": 693,
+   "printing and copying": 320,
+   "reading": 3156,
+   "documents and paperwork": 3363,
+   "time keeping": 922,
+   "laundry": 1170,
+   "switch and control": 855,
+   "greenery and nature": 212
+  },
+  "unmapped_targets": {},
+  "val_keyword_coverage": 0.9466083150984683,
+  "test_keyword_coverage": 0.9489423778264041
+ }
+}

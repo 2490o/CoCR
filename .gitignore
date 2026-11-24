@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+output/
+vis/
+roberta-base/
+pointnet2/build/
+pointnet2/*.egg-info/
+pointnet2/dist/
+*.so
+*.pth
+*.pkl
+.vscode/
